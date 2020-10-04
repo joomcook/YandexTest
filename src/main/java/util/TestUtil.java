@@ -8,6 +8,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 
@@ -19,8 +20,17 @@ public class TestUtil extends TestBase {
     }
 
     public String convertStringToUTF(String stringToConvert) {
-        ByteBuffer stringToConvertByteBuffer = ByteBuffer.wrap(stringToConvert.getBytes());
+        /*ByteBuffer stringToConvertByteBuffer = ByteBuffer.wrap(stringToConvert.getBytes());*/
+        byte[] stringToConvertByte = stringToConvert.getBytes();
+        String convertedString = new String(stringToConvertByte, StandardCharsets.UTF_8);
 
-        return StandardCharsets.UTF_8.decode(stringToConvertByteBuffer).toString();
+        /*try {
+            stringToConvertByte = stringToConvert.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            stringToConvertByte = stringToConvert.getBytes();
+        }*/
+        System.out.println(convertedString);
+
+        return convertedString;
     }
 }
