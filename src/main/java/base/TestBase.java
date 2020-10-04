@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
 
     public static WebDriver driver;
-    public static Properties prop;
+    public Properties prop;
 
     public TestBase() {
         try {
@@ -27,7 +27,7 @@ public class TestBase {
         }
     }
 
-    public static void initialization(){
+    public void initialization(){
         String browserName = prop.getProperty("browser");
         String driverFile = prop.getProperty("driver_file");
 
