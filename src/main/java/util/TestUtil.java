@@ -16,7 +16,7 @@ public class TestUtil extends TestBase {
     public void takeScreenshot() throws IOException {
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String currentDir = System.getProperty("user.dir");
-        FileUtils.copyFile(scrFile, new File(currentDir + "/src/test/java/testcases/" + System.currentTimeMillis() + ".png"));
+        FileUtils.copyFile(scrFile, new File(currentDir + "/src/test/java/testcases/" + System.currentTimeMillis() + ".jpg"));
     }
 
     public String convertStringToUTF(String stringToConvert) {
