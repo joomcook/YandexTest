@@ -29,7 +29,6 @@ public class TestUtil extends TestBase {
         } catch (UnsupportedEncodingException e) {
             stringToConvertByte = stringToConvert.getBytes();
         }*/
-        System.out.println(convertedString);
 
         return convertedString;
     }
