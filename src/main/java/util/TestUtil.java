@@ -3,13 +3,10 @@ package util;
 import base.TestBase;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import base.TestBase;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 
 public class TestUtil extends TestBase {
@@ -20,15 +17,8 @@ public class TestUtil extends TestBase {
     }
 
     public String convertStringToUTF(String stringToConvert) {
-        /*ByteBuffer stringToConvertByteBuffer = ByteBuffer.wrap(stringToConvert.getBytes());*/
         byte[] stringToConvertByte = stringToConvert.getBytes();
         String convertedString = new String(stringToConvertByte, StandardCharsets.UTF_8);
-
-        /*try {
-            stringToConvertByte = stringToConvert.getBytes("UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            stringToConvertByte = stringToConvert.getBytes();
-        }*/
 
         return convertedString;
     }
