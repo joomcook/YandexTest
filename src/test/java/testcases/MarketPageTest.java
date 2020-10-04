@@ -10,6 +10,8 @@ import pages.YandexHomePage;
 import util.TestUtil;
 
 import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 
 public class MarketPageTest extends TestBase {
 
@@ -36,7 +38,9 @@ public class MarketPageTest extends TestBase {
         Assert.assertTrue(mhp.verifyMarketHomePage(), "Market home page didn't loaded properly");
         Thread.sleep(2000);
 
-        Assert.assertTrue(mhp.fillProductTextBox("ноутбук xiaomi redmibook"), "Product text box didn't fill properly");
+        String productName = testutil.convertStringToUTF("ноутбук xiaomi redmibook");
+
+        Assert.assertTrue(mhp.fillProductTextBox(productName), "Product text box didn't fill properly");
         mhp.submitProduct();
         Thread.sleep(2000);
 
